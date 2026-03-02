@@ -1,94 +1,333 @@
-# StockAlert - Indian Stock Price Tracking App
+# StockAlert - Advanced Indian Stock Price Tracking App
 
-A complete Android application built with Kotlin and Jetpack Compose that allows users to track Indian stock prices from NSE/BSE and receive push notifications when stocks reach target prices.
+A complete, feature-rich Android application built with Kotlin and Jetpack Compose that allows users to track Indian stock prices from NSE/BSE with advanced portfolio management, sophisticated alert conditions, historical analysis, and push notifications.
 
-## Features
+## Version 2.0 - Enhanced Features
 
-### 1. **Stock Search** 
+### Core Features (v1)
+
+#### 1. **Stock Search** 
 - Search Indian stocks by company name or NSE ticker symbol
 - Real-time stock data from Yahoo Finance API (no API key required)
 - Display results with current price in INR, percentage change (color-coded)
-- Support for major Indian stocks (RELIANCE, TCS, INFY, HDFC, etc.)
+- Support for 20+ major Indian stocks (RELIANCE, TCS, INFY, HDFC, etc.)
 
-### 2. **Stock Details View**
+#### 2. **Stock Details View**
 - Comprehensive stock information:
   - Current market price in ₹
   - Day High/Low
   - Trading Volume
   - Previous Close
   - Daily percentage change
+  - Historical price data
+  - Moving averages and volatility indicators
+  - Related news articles
 - One-click "Set Price Alert" button
 
-### 3. **Price Alert System**
+#### 3. **Basic Price Alert System**
 - Create custom price alerts with:
   - Target price specification
   - Alert type: "Price Goes Above" or "Price Falls Below"
   - Persistent local storage via Room Database
   - Triggered/Active status tracking
 
-### 4. **Background Price Monitoring**
+#### 4. **Background Price Monitoring**
 - Android WorkManager scheduled every 15 minutes
 - Automatically fetches latest prices for all active alerts
 - Condition evaluation: checks if current price meets target criteria
 - WorkManager persists across device reboots (BOOT_COMPLETED receiver)
 
-### 5. **Push Notifications**
+#### 5. **Push Notifications**
 - Local notifications triggered when alert conditions are met
 - Rich notification content with stock name, current price, and target
 - Tap notification to open app and view stock details
-- Auto-stop monitoring after alert is triggered
+- Per-stock notification preferences with quiet hours
 
-### 6. **My Alerts Screen**
+#### 6. **My Alerts Screen**
 - View all active and triggered alerts
 - Display: stock name, target price, current price, alert type, status
-- Delete or reset alerts
+- Delete, reset, or snooze alerts
 - Manage multiple alerts efficiently
+
+---
+
+### New Features (v2) - High Priority
+
+#### 7. **Advanced Alert Conditions** ✨
+- **Multiple alert types:**
+  - Price Above/Below threshold
+  - Percentage change alerts (e.g., ±5%)
+  - Volume spike detection (unusual trading activity)
+  - Moving average crossovers (technical analysis)
+- **Alert frequency options:**
+  - Real-time (immediate notification)
+  - Hourly batching
+  - Daily digest
+  - Weekly summary
+- **Quiet hours scheduling:**
+  - Customize silence periods (e.g., 10 PM - 8 AM)
+  - Per-stock notification control
+
+#### 8. **Portfolio Management** 💼
+- **Multiple portfolios:**
+  - Create unlimited portfolios
+  - Name and organize by strategy/sector
+  - Set default portfolio
+  - Track portfolio value
+- **Watchlists:**
+  - Create watchlists within portfolios
+  - Organize stocks by theme (Tech, Banking, Index, etc.)
+  - Quick access to favorite stocks
+  - Share portfolio insights
+- **Portfolio analytics:**
+  - Total portfolio value calculation
+  - Sector allocation
+  - Performance tracking
+
+#### 9. **Advanced User Preferences** ⚙️
+- **Global settings:**
+  - Dark mode support
+  - Currency selection (INR, USD, EUR, etc.)
+  - Decimal places for precision
+  - App refresh intervals (5, 15, 30, 60 min)
+  - Default data source selection
+- **Notification preferences:**
+  - Toggle notifications per stock
+  - Sound and vibration control
+  - Email notification option (ready for backend)
+  - SMS notification option (ready for backend)
+  - Quiet hours per stock
+- **Data persistence:**
+  - DataStore-based local storage
+  - Automatic synchronization
+  - Cloud sync ready (Firebase integration)
+
+#### 10. **Price History & Technical Analysis** 📊
+- **Historical data tracking:**
+  - 90+ days of price history per stock
+  - Price points with OHLCV data
+  - Automatic data cleanup
+- **Technical indicators:**
+  - Moving averages (5, 10, 20, 50, 200-day)
+  - Price volatility calculation
+  - 52-week high/low tracking
+  - Trend analysis
+- **Chart support:**
+  - Ready for MPAndroidChart integration
+  - Date range queries
+  - Multi-timeframe analysis
+
+---
+
+### New Features (v2) - Medium Priority
+
+#### 11. **Multi-Source Data Integration** 🔗
+- **Supported data sources:**
+  - Yahoo Finance (Primary)
+  - Alpha Vantage
+  - IEX Cloud
+  - Finnhub
+  - Polygon.io
+- **Features:**
+  - Automatic source switching
+  - Fallback mechanisms
+  - Data source configuration
+  - API key management
+
+#### 12. **News Integration** 📰
+- **News feeds:**
+  - Stock-specific news articles
+  - Latest market news
+  - Multi-source aggregation
+  - News API integration ready
+- **Features:**
+  - Article summaries with links
+  - Source attribution
+  - Publication date/time
+  - Image thumbnails
+  - Search within news
+
+#### 13. **Real-time Price Updates** ⚡
+- **WebSocket support (ready for implementation):**
+  - Live price streaming
+  - Minimal latency updates
+  - Connection management
+  - Fallback to polling
+
+---
+
+### New Features (v2) - Premium
+
+#### 14. **AI-Powered Price Predictions** 🤖
+- **ML model integration:**
+  - 7-day price forecasts
+  - Confidence scoring (0-100%)
+  - Model versioning
+  - Historical prediction accuracy
+- **Prediction history:**
+  - Track prediction accuracy over time
+  - Compare model versions
+  - Export predictions
+
+#### 15. **Custom Alert Templates** 📋
+- **Pre-built templates:**
+  - 5% price change alert
+  - 10% price change alert
+  - Volume spike alert
+  - Moving average crossover
+- **Features:**
+  - Save custom templates
+  - Quick alert creation from templates
+  - Template sharing
+  - Template management
+
+#### 16. **Advanced Notifications** 📧
+- **Multi-channel delivery (ready for backend):**
+  - Push notifications
+  - Email alerts
+  - SMS notifications
+  - In-app notifications
+- **Smart batching:**
+  - Prevent notification fatigue
+  - Batch similar alerts
+  - Customizable batch windows
+
+#### 17. **Export & Reporting** 📄
+- **Data export:**
+  - CSV export of alerts
+  - Portfolio reports
+  - Performance analytics
+  - PDF generation
+- **Features:**
+  - Email reports
+  - Scheduled reports
+  - Custom date ranges
+
 
 ## Tech Stack
 
 ```
-Language:           Kotlin
-UI:                 Jetpack Compose
-Architecture:       MVVM (ViewModel + StateFlow)
-Local Database:     Room Database
-Networking:         Retrofit + OkHttp + Gson
-Background Tasks:   Android WorkManager
-Dependency Inject:  Hilt
-Notifications:      NotificationManager/NotificationCompat
-API:                Yahoo Finance (https://query1.finance.yahoo.com/)
+Language:              Kotlin
+UI:                    Jetpack Compose
+Architecture:          MVVM (ViewModel + StateFlow/Flow)
+Local Database:        Room Database (v2 with 11 entities)
+Data Persistence:      DataStore (preferences & settings)
+Networking:            Retrofit + OkHttp + Gson
+Background Tasks:      Android WorkManager
+Dependency Injection:  Hilt (Dagger)
+Notifications:         NotificationManager/NotificationCompat
+APIs Supported:        Yahoo Finance, Alpha Vantage, IEX Cloud, Finnhub, 
+                       Polygon.io, News API (Ready for Firebase)
+Build System:          Gradle (Kotlin DSL)
 ```
 
-## Project Structure
+## Enhanced Project Structure
 
 ```
 com.stockalert/
 ├── data/
 │   ├── api/
-│   │   ├── ApiModels.kt          (Yahoo Finance response DTOs)
-│   │   └── YahooFinanceApi.kt    (Retrofit interface)
+│   │   ├── ApiModels.kt              (Multi-source API response DTOs)
+│   │   └── YahooFinanceApi.kt        (Multiple API interfaces)
+│   │
 │   ├── db/
-│   │   ├── Entities.kt            (Room entities)
-│   │   ├── Dao.kt                 (Data access objects)
-│   │   └── StockAlertDatabase.kt  (Room database)
+│   │   ├── Entities.kt               (11 Room entities + new)
+│   │   ├── Dao.kt                    (11 DAOs for enhanced functionality)
+│   │   └── StockAlertDatabase.kt     (Updated Room database v2)
+│   │
+│   ├── preferences/
+│   │   ├── SettingsManager.kt        (NEW: Global preferences)
+│   │   └── NotificationPreferencesRepository.kt (NEW: Per-stock notifications)
+│   │
+│   ├── provider/
+│   │   └── StockDataProvider.kt      (NEW: Content provider)
+│   │
 │   └── repository/
-│       └── StockRepository.kt     (Business logic)
+│       ├── StockRepository.kt        (Core stock operations)
+│       ├── PortfolioRepository.kt    (NEW: Portfolio management)
+│       ├── PriceHistoryRepository.kt (NEW: Historical data & indicators)
+│       └── ExtendedRepositories.kt   (NEW: News, Predictions, Templates)
+│
 ├── domain/
 │   └── model/
-│       └── Models.kt              (Domain models)
+│       └── Models.kt                 (Enhanced with 10+ new models)
+│
 ├── ui/
 │   ├── home/
-│   │   ├── HomeScreen.kt          (Search screen)
+│   │   ├── HomeScreen.kt
 │   │   └── HomeViewModel.kt
 │   ├── detail/
-│   │   ├── DetailScreen.kt        (Stock details)
+│   │   ├── DetailScreen.kt
 │   │   └── DetailViewModel.kt
 │   ├── alerts/
-│   │   ├── AlertsScreen.kt        (Alerts management)
+│   │   ├── AlertsScreen.kt
 │   │   └── AlertsViewModel.kt
+│   ├── portfolio/               (NEW: Portfolio screens - ready for UI)
+│   │   ├── PortfolioScreen.kt
+│   │   └── PortfolioViewModel.kt
+│   ├── settings/                (NEW: Settings screens - ready for UI)
+│   │   ├── SettingsScreen.kt
+│   │   └── SettingsViewModel.kt
 │   ├── components/
-│   │   └── StockComponents.kt     (Reusable Compose components)
+│   │   └── StockComponents.kt
 │   └── theme/
-│       └── Theme.kt               (Material 3 theme)
+│       └── Theme.kt
+│
+├── worker/
+│   ├── PriceCheckWorker.kt
+│   └── BootCompletedReceiver.kt   (NEW: Device boot handling)
+│
+├── widget/
+│   └── StockAlertWidgetProvider.kt (NEW: Widget support)
+│
+├── notification/
+│   └── NotificationHelper.kt
+│
+├── di/
+│   └── DependencyInjection.kt    (Enhanced with 20+ providers)
+│
+├── utils/
+│   ├── AppConstants.kt           (Enhanced with 100+ new constants)
+│   └── Extensions.kt
+│
+├── MainActivity.kt
+└── StockAlertApp.kt
+```
+
+## Database Schema (v2.0)
+
+### Core Entities
+- `StockEntity` - Stock price data (updated with dataSource)
+- `PriceAlertEntity` - Alert configurations (enhanced with multiple conditions)
+
+### New Portfolio Entities
+- `PortfolioEntity` - User portfolios
+- `WatchlistEntity` - Watchlists within portfolios
+- `WatchlistItemEntity` - Stocks in watchlists
+
+### New Data Entities
+- `PriceHistoryEntity` - Historical OHLCV data
+- `NewsArticleEntity` - Stock news articles
+- `PricePredictionEntity` - ML model predictions
+
+### New Settings Entities
+- `UserSettingsEntity` - Global app preferences
+- `NotificationSettingsEntity` - Per-stock notification preferences
+- `AlertTemplateEntity` - Saved alert templates
+
+## API Integration Status
+
+| Data Source | Status | Features |
+|------------|--------|----------|
+| **Yahoo Finance** | ✅ Active | Quotes, History, Volume |
+| **Alpha Vantage** | 🔄 Ready | Intraday, Daily, Weekly |
+| **IEX Cloud** | 🔄 Ready | Real-time, Historical, News |
+| **Finnhub** | 🔄 Ready | News, Sentiment |
+| **Polygon.io** | 🔄 Ready | OHLCV, Aggregates |
+| **News API** | 🔄 Ready | News feeds, Headlines |
+| **Firebase** | 🔄 Ready | Auth, Cloud Sync |
+| **Email/SMS** | 🔄 Ready | Backend required |
+```
 ├── worker/
 │   └── PriceCheckWorker.kt        (WorkManager background task)
 ├── notification/
