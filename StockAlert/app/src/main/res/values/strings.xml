@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StockAlert</string>
+    <string name="home">Home</string>
+    <string name="my_alerts">My Alerts</string>
+    <string name="search_stocks">Search Stocks</string>
+    <string name="search_hint">Search by company name or ticker</string>
+    <string name="no_results">No stocks found</string>
+    <string name="stock_details">Stock Details</string>
+    <string name="current_price">Current Price</string>
+    <string name="day_high">Day High</string>
+    <string name="day_low">Day Low</string>
+    <string name="volume">Volume</string>
+    <string name="previous_close">Previous Close</string>
+    <string name="set_price_alert">Set Price Alert</string>
+    <string name="target_price">Target Price (₹)</string>
+    <string name="alert_type">Alert Type</string>
+    <string name="price_goes_above">Price Goes Above</string>
+    <string name="price_falls_below">Price Falls Below</string>
+    <string name="save_alert">Save Alert</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="active">Active</string>
+    <string name="triggered">Triggered</string>
+    <string name="no_alerts">No alerts yet</string>
+    <string name="loading">Loading...</string>
+    <string name="error">Error</string>
+    <string name="retry">Retry</string>
+    <string name="no_internet">No internet connection</string>
+    <string name="notification_channel_name">Stock Alerts</string>
+    <string name="notification_channel_description">Notifications for stock price alerts</string>
+    <string name="stock_alert_reached">Stock Alert Reached</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="notification_permission_text">This app needs notification permission to send price alerts</string>
+    <string name="allow">Allow</string>
+    <string name="deny">Deny</string>
+</resources>
